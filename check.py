@@ -33,4 +33,4 @@ if seen is not None:
             },
         )
 
-json.dump(list(movies.keys()), open(FILE, "w"))
+json.dump(sorted((seen or set()) | set(movies.keys())), open(FILE, "w"))
